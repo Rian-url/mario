@@ -4,13 +4,18 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color:rgb(61, 41, 12);
+}
+
 .game-board {
     width: 80%;
     height: 500px;
-    border: 1px solid #333;
+    border: 15px solid rgb(35, 160, 35);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
 .pipe {
@@ -26,8 +31,37 @@
     bottom: 0;
 }
 
+.clouds{
+    width: 500px;
+    position: absolute;
+
+    animation: clouds-animation 10s infinite linear; 
+}
+
 .jump {
     animation: jump 500ms ease-out;
+}
+
+.restart{
+    background-color: red;
+    border:none;
+    border-radius: 10px;
+
+    color: white;
+    font-family:sans-serif;
+    font-size: 15px;
+
+    height: 50px;
+    width: 140px;
+    position: absolute;
+    margin-top:12rem;
+    margin-left: 27rem;
+
+    display: none;
+}
+
+.restart:hover{
+    cursor: pointer;
 }
 
 @keyframes pipe-animation {
@@ -54,5 +88,14 @@
     }
     100% {
         bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from{
+right: -500px;
+    }
+    to {
+        right: 100%;
     }
 }
